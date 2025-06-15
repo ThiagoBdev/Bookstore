@@ -1,6 +1,6 @@
 
 from django.contrib.auth.models import User
-from Bookstore.product.models.product import Product
+from product.models.product import Product
 
 
 
