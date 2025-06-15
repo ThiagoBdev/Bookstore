@@ -1,11 +1,9 @@
-from rest_framework.viewsets import ModelViewSet
 
-from product.models import Category
+
+from rest_framework import viewsets
+from product.models.category import Category
 from product.serializers.category_serializer import CategorySerializer
 
-
-class CategoryViewSet(ModelViewSet):
+class CategoryViewSet(viewsets.ModelViewSet):
+    queryset = Category.objects.all()
     serializer_class = CategorySerializer
-
-    def get_queryset(self):
-        return Category.objects.all().order_by("id")
